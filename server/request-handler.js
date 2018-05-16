@@ -48,7 +48,7 @@ var requestHandler = function(request, response) {
     });
     
   } else {
-    respond(response, data, 200);
+    respond(response, '', 200);
   }
 
 };
