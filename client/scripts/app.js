@@ -40,7 +40,7 @@ filterBadMessages = function(message) {
 
 app.send = function(message) {
   $.ajax({
-    url: 'http://127.0.0.1:3000/classes/messages',
+    url: 'https://chatterbox-18.herokuapp.com/classes/messages',
     type: 'POST',
     data: JSON.stringify(message),
     contentType: 'application/json',
@@ -56,7 +56,7 @@ app.send = function(message) {
 
 app.fetch = function() {
   $.ajax({
-    url: 'http://127.0.0.1:3000/classes/messages?order=-createdAt', //keys=username%2Ctext%2Croomname
+    url: 'https://chatterbox-18.herokuapp.com/classes/messages?order=-createdAt', //keys=username%2Ctext%2Croomname
     type: 'GET',
     contentType: 'application/json',
     success: function (data) {
@@ -74,7 +74,7 @@ app.refresh = function() {
   chats = [];
   rooms = {};
   $.ajax({
-    url: 'http://127.0.0.1:3000/classes/messages?order=-createdAt', //keys=username%2Ctext%2Croomname
+    url: 'https://chatterbox-18.herokuapp.com/messages?order=-createdAt', //keys=username%2Ctext%2Croomname
     type: 'GET',
     contentType: 'application/json',
     success: function (data) {
@@ -115,7 +115,7 @@ app.renderRoom = function(roomname) {
   }
 };
 
-app.server = 'http://127.0.0.1:3000/classes/messages';
+app.server = 'https://chatterbox-18.herokuapp.com/classes/messages';
 
 
 $(document).ready(function() {
